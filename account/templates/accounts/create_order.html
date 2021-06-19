@@ -1,0 +1,29 @@
+{% extends 'accounts/main.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="container-fluid">
+  <div class="col-md-5">
+    <div class="card card-body" style="background-color:#33FF57 ;color:white">
+      <form action="" method="POST">
+        {% csrf_token %}
+
+        {% if form %}
+        {{form.as_p}}
+        {% endif %}
+
+        {% if formset %}
+        {{ formset.management_form }}
+        {% for form in formset %}
+        {{form}}
+
+        <br>
+        {% endfor %}
+        {% endif %}
+        <input class="btn btn-info" type="submit" style="margin-left:360px" name="Submit">
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

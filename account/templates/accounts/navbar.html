@@ -1,0 +1,28 @@
+{% load static %}
+<style>
+    .hello-msg{
+    padding-right:30px;
+    color:white;
+    }
+
+
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="https://cdn.dribbble.com/users/60166/screenshots/15558186/media/fa6bd0b894439dd443fa89956d74719b.jpg"  style="width:5vw;min-width:4px;"/>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">z
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'home' %}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'product' %}">Products</a>
+            </li>
+        </ul>
+    </div>
+    <span class="hello-msg">Hello, {{user}}</span>
+    <span><a href="{% url 'logout' %}">Logout</a></span>
+</nav>
